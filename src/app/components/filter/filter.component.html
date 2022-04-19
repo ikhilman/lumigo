@@ -1,0 +1,17 @@
+<div class="main-wrapper">
+
+    <div class="item-title">
+        {{title}}
+    </div>
+
+    <div class="check-boxes-wrapper">
+        <form  *ngIf="filterFormGroup" [formGroup]="filterFormGroup">
+                <div *ngFor="let item of formArray.controls;let i = index">
+                    <mat-checkbox [formControl]="asFormControl(item)" [labelPosition]="labelPosition">
+                        {{filters[i].filter}}
+                    </mat-checkbox>
+                </div>
+        </form>
+    </div>
+
+</div>

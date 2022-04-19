@@ -1,0 +1,43 @@
+<div class="main-wrapper">
+
+    <div class="filter-wrapper ">
+        <div class="filters-title">
+            Filters
+        </div>
+        <div class="filter-item">
+            <app-filter [filters]="priceFilters" (filterChanged)="priceFilterChange($event)" [title]="'Price'">
+            </app-filter>
+        </div>
+        <div class="filter-item">
+            <app-filter [filters]="ratingFilters" (filterChanged)="ratingFilterChange($event)" [title]="'Rating'">
+            </app-filter>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+
+        <div class="search-wrapper">
+            <app-text-input (textInput)="textInput($event)"></app-text-input>
+        </div>
+
+        <div class="products-shopping-cart-wrapper">
+
+            <div class="products-wrapper" *ngIf="products$ | async as products">
+
+                <div class="product-wrapper" *ngFor="let product of products">
+                    <app-item [product]="product" (quantitySelected)="quantitySelected($event)"></app-item>
+                </div>
+                <div class="loader" *ngIf="!products.length">
+                    <ngx-skeleton-loader count="24" appearance="line"></ngx-skeleton-loader>
+                </div>
+            </div>
+
+            <div class="shopping-cart-wrapper">
+                <app-shopping-cart [products]="shoppingCart$ | async" (removeClicked)="removeClicked($event)">
+                </app-shopping-cart>
+            </div>
+        </div>
+
+    </div>
+
+</div>

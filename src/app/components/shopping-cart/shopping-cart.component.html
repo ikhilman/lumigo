@@ -1,0 +1,31 @@
+<mat-card class="card">
+
+    <div class="header-wrapper">
+        Cart
+    </div>
+
+    <mat-card-content>
+
+        <div class="product-row-wrapper" *ngFor="let product of products">
+
+            <div class="product-title">
+                {{product.title}}
+            </div>
+
+            <div class="product-quantity">
+                x{{product.quantity}}
+            </div>
+
+            <div class="product-price">
+                {{product.price}}
+            </div>
+
+            <div class="remove-button">
+                <mat-icon (click)="removeItem(product)">delete</mat-icon>
+            </div>
+
+        </div>
+    </mat-card-content>
+
+
+</mat-card>

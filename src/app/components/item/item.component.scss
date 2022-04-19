@@ -1,0 +1,22 @@
+.card {
+    max-width: 400px;
+    min-height: 400px;
+
+    .image-wrapper {
+
+        padding: 2rem;
+        img {
+            min-height: 30rem;
+        }
+    }
+
+    mat-card-content {
+        .rating-price-wrapper {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+}
+

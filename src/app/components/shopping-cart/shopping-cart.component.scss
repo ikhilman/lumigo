@@ -1,0 +1,32 @@
+.card {
+    min-height: 22rem;
+    min-width: 17rem;
+
+    .header-wrapper {
+        height: 1.5rem;
+        border-bottom: 1px rgb(236, 229, 229) solid;
+        display: flex;
+        justify-content: center;
+    }
+
+    mat-card-content {
+        margin-top: 1rem;
+
+        .product-row-wrapper {
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .product-title {
+                min-width: 10.8rem;
+            }
+
+            .remove-button {
+                mat-icon {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
